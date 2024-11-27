@@ -7,11 +7,11 @@ on:
       - Azure
     paths:
       - 'apps/acme-catalog/**'
-env:
-  SPRING_APPS_SERVICE: ${{ secrets.SPRING_APPS_SERVICE }}
-  RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
-  KEY_VAULT: ${{ secrets.KEY_VAULT }}
-  CATALOG_SERVICE_APP: catalog-service
+# env:
+#   SPRING_APPS_SERVICE: ${{ secrets.SPRING_APPS_SERVICE }}
+#   RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
+#   KEY_VAULT: ${{ secrets.KEY_VAULT }}
+#   CATALOG_SERVICE_APP: catalog-service
 
 permissions:
       id-token: write
