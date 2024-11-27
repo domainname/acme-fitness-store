@@ -44,5 +44,5 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
       - name: Build and push Docker image using Buildpacks
         run: |
-          pack build ${{ secrets.ACR_SERVER }}/acme-fitness-store-bp/cataglog:${{ github.sha }} --builder gcr.io/buildpacks/builder:v1 --path apps/acme-catalog
+          pack build ${{ secrets.ACR_SERVER }}/acme-fitness-store-bp/cataglog:${{ github.sha }} --builder paketobuildpacks/builder-jammy-base:latest --path .
           docker push ${{ secrets.ACR_SERVER }}/acme-fitness-store-bp/cataglog:${{ github.sha }}
