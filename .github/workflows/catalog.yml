@@ -44,5 +44,5 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
       - name: Build and push Docker image using Buildpacks
         run: |
-          pack build ${{ secrets.ACR_SERVER }}/acme-fitness-store-bp/cataglog:${{ github.sha }} --builder paketobuildpacks/builder-jammy-base:latest --path .
+          pack build ${{ secrets.ACR_SERVER }}/acme-fitness-store-bp/cataglog:${{ github.sha }} --builder paketobuildpacks/builder-jammy-base:latest --env "BP_JVM_VERSION=17" --path .
           docker push ${{ secrets.ACR_SERVER }}/acme-fitness-store-bp/cataglog:${{ github.sha }}
